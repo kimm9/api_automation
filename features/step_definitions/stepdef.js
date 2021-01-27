@@ -1,27 +1,29 @@
 const assert = require('assert');
 const axios = require('axios');
 const { Given, When, Then } = require('@cucumber/cucumber');
-const {
-	hundredPosts
-} = require('../../src/index.js');
+const { aboveHundredPosts, getPostsandCount, createPost, updatePostwithComments, deletePost, updatePost} = require('../../src/index.js');
 
+aboveHundredPosts(100)
 
-
-
-
-hundredPosts()
-         Given('that number of posts is {int}', function (int) {
-         	this.int = 100
-         });
-      
-
-         When('I verify that posts length is equal to {int}', function (int) {
-         // When('I verify that posts length is equal to {float}', function (float) {
+    Given('number of post is {int}', function (int) {
+         // Given('number of post is {float}', function (float) {
            // Write code here that turns the phrase above into concrete actions
-           this.actualAnswer = hundredPosts()
+           this.numberOfPost = getPostsandCount()
          });
-       
-         Then('I should be told {then}', function (expectedAnswer) {
-         	assert.equal(this.actualAnswer, expectedAnswer)
+
+
+
+    When('asked is amount of posts is more than {int}', function (int) {
+         // When('asked is amount of posts is {float}', function (float) {
+           // Write code here that turns the phrase above into concrete actions
+           this.actualAnswer = aboveHundredPosts(100)
          });
-       
+
+
+    Then('I should be told {string}', function (string) {
+           // Write code here that turns the phrase above into concrete actions
+           return aboveHundredPosts(102)
+
+
+         });
+

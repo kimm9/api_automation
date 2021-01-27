@@ -11,7 +11,6 @@ const getPostsandCount = () => {
     	'https://jsonplaceholder.typicode.com/posts'
     )
    	.then((response) =>{
-   		console.log(Object.entries(response.data).length)
    		return Object.entries(response.data).length
    	})
   } catch (error) {
@@ -19,13 +18,14 @@ const getPostsandCount = () => {
   }
 }
 
-const hundredPosts = () => {
+const aboveHundredPosts = (int) => {
 	const numPosts = getPostsandCount()
 	.then(response => {
-		if(response === 100) {
-			return 100
+
+		if(int > response) {
+			return "this is larger 100"
 		} else {
-			return "no"
+			return "nope"
 		}
 	})
 }
@@ -102,4 +102,4 @@ const updatePostwithComments = async (postId) => {
 //updatePostwithComments(1)
 
 
-module.exports = { hundredPosts };
+module.exports = { aboveHundredPosts, getPostsandCount, createPost, updatePostwithComments, deletePost, updatePost };

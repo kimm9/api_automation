@@ -1,11 +1,6 @@
-Feature: Did it get 100 post?
-  Everyone wants to know if 100 post is called
-
-  Scenario: API called 100 posts or not 
-    Given that number of posts is 100
-    When I verify that posts length is equal to 100
-    Then I should be told 100
-
-  Examples:
-    | number            | 100   |
-    | anything else! | no   |
+Feature: Verify API call is getting 100 Posts or not
+	
+	Scenario: Number of post is 100 or not
+		Given number of post is 100
+		When asked is amount of posts is more than 100
+		Then I should be told "nope"
