@@ -6,5 +6,5 @@
 
 # To run tests 
 
-'npm test ./features' 
+'npm test' 
 
